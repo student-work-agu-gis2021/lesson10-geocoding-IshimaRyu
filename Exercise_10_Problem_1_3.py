@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+10#!/usr/bin/env python
 # coding: utf-8
 
 # ## Problem 1: Geocode shopping centers
@@ -12,6 +12,8 @@ import pandas as pd
 # Read the data (replace "None" with your own code)
 data = None
 # YOUR CODE HERE 1 to read the data
+data = pd.read_table('shopping_centers.txt', sep=';',header=None)
+data.columns=['id','name', 'addr']
 
 #TEST COEE
 # Check your input data
@@ -23,8 +25,11 @@ print(data)
 geo = None
 from geopandas.tools import geocode
 
+
 # Geocode addresses using Nominatim. Remember to provide a custom "application name" in the user_agent parameter!
 #YOUR CODE HERE 2 for geocoding
+geo = geocode(data['addr'], provider='nominatim', user_agent='autogis_xx')
+
 
 #TEST CODE
 # Check the geocoded output
@@ -47,6 +52,7 @@ print(geo.crs)
 # YOUR CODE HERE 4 to join the tables
 geodata = None
 
+
 #TEST CODE
 # Check the join output
 print(geodata.head())
@@ -57,6 +63,7 @@ print(geodata.head())
 # Define output filepath
 out_fp = None
 # YOUR CODE HERE 5 to save the output
+
 
 # TEST CODE
 # Print info about output file
@@ -70,7 +77,9 @@ print("Geocoded output is stored in this file:", out_fp)
 
 # YOUR CODE HERE 6 to create a new column
 
+
 # YOUR CODE HERE 7 to set buffer column
+
 
 #TEST CODE
 print(geodata.head())
@@ -88,6 +97,7 @@ print(round(gpd.GeoSeries(geodata["buffer"]).area / 1000000))
 # - Replace the values in `geometry` column with the values of `buffer` column:
 
 # YOUR CODE HERE 8 to replace the values in geometry
+geodata['geometry'] = geodata['buffer']
 
 #TEST CODE
 print(geodata.head())
@@ -99,6 +109,7 @@ print(geodata.head())
 # 
 
 # YOUR CODE HERE 9
+pop=None
 # Read population grid data for 2018 into a variable `pop`. 
 
 #TEST CODE
@@ -113,8 +124,8 @@ print(pop.head(3))
 # Create a spatial join between grid layer and buffer layer. 
 # YOUR CDOE HERE 10 for spatial join
 
-
 # YOUR CODE HERE 11 to report how many people live within 1.5 km distance from each shopping center
+
 
 # **Reflections:**
 #     
