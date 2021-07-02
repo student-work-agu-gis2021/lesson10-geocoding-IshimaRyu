@@ -63,8 +63,8 @@ print(geodata.head())
 # Define output filepath
 out_fp = None
 # YOUR CODE HERE 5 to save the output
-outfp = r"shopping_centers.shp"
-geodata.to_file(outfp)
+out_fp = r"shopping_centers.shp"
+geodata.to_file(out_fp)
 
 # TEST CODE
 # Print info about output file
@@ -77,7 +77,7 @@ print("Geocoded output is stored in this file:", out_fp)
  
 
 # YOUR CODE HERE 6 to create a new column
-
+geodata['buffer']=None
 
 # YOUR CODE HERE 7 to set buffer column
 
