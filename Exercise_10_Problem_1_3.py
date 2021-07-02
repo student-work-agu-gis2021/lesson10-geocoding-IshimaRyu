@@ -152,5 +152,11 @@ print("National Azabu :"+str(azabu_sum))
 # - What was difficult?
 
 # YOUR ANSWER HERE
+# Problem1:4 Problem2:5 Problem3:5
+#It was difficult because I didn't know how to make an address from problem 1.
+
+#Problem1
+
+#How to make an address
 
 # Well done!
