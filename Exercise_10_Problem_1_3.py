@@ -141,6 +141,9 @@ tokyu_sum=round(tokyu["PTN_2020"].sum())
 seibu_sum=round(seibu["PTN_2020"].sum())
 azabu_sum=round(azabu["PTN_2020"].sum())
 
+print("Tokyo Department Store :"+tokyu_sum)
+print("Seibu Shibuya Store :"+seibu_sum)
+print("National Azabu :"+azabu_sum)
 
 # **Reflections:**
 #     
