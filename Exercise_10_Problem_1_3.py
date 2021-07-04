@@ -132,16 +132,16 @@ print(pop.head(3))
 # YOUR CDOE HERE 10 for spatial join
 
 join = gpd.sjoin(geodata, pop, how="inner", op="intersects")
-tokyu = join.loc[join["name"] == "Tokyo Department Store"]
-azabu = join.loc[join["name"] == "Seibu Shibuya Store"]
-seibu = join.loc[join["name"] == 'National Azabu']
+tokyu = join.loc[join["name"] == "Tokyu Department Store"]
+seibu = join.loc[join["name"] == "Seibu Shibuya Store"]
+azabu = join.loc[join["name"] == 'National Azabu']
 
 # YOUR CODE HERE 11 to report how many people live within 1.5 km distance from each shopping center
 tokyu_sum=round(tokyu["PTN_2020"].sum())
 seibu_sum=round(seibu["PTN_2020"].sum())
 azabu_sum=round(azabu["PTN_2020"].sum())
 
-print("Tokyo Department Store :"+str(tokyu_sum))
+print("Tokyu Department Store :"+str(tokyu_sum))
 print("Seibu Shibuya Store :"+str(seibu_sum))
 print("National Azabu :"+str(azabu_sum))
 
